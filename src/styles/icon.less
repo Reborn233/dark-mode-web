@@ -1,0 +1,75 @@
+.moon {
+  &.icon {
+    color: #000;
+    position: relative;
+    margin-left: 4px;
+    margin-top: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: currentColor;
+    border: solid 2px currentColor;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 1px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border-top: solid 1px transparent;
+      border-bottom: solid 2px currentColor;
+      border-left: solid 2px currentColor;
+      border-right: solid 1px transparent;
+      transform: rotate(45deg);
+      background-color: #f6f6f6;
+    }
+  }
+}
+.sun {
+  right: 12px;
+  &.icon {
+    color: #000;
+    position: relative;
+    margin-left: 6px;
+    margin-top: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    box-shadow: -8px 0 0 -3px currentColor, 8px 0 0 -3px currentColor,
+      0 -8px 0 -3px currentColor, 0 8px 0 -3px currentColor,
+      -6px -6px 0 -3px currentColor, -6px 6px 0 -3px currentColor,
+      6px -6px 0 -3px currentColor, 6px 6px 0 -3px currentColor;
+    transform: scale(1.5);
+  }
+}
+
+.remove {
+  width: 36px;
+  height: 36px;
+  &.icon {
+    color: #000;
+    position: relative;
+    margin-left: 3px;
+    margin-top: 10px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 1px;
+      background-color: currentColor;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 1px;
+      background-color: currentColor;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  }
+}
