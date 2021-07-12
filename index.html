@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="icon" href="./assets/favicon_ucar.f1a6bacb.ico" />
+    <title></title>
+    <style>
+      [v-clock] {
+        display: none;
+      }
+    </style>
+  <script type="module" crossorigin src="./assets/main.0f993ef2.js"></script>
+  <link rel="modulepreload" href="./assets/vendor.d9b43e6b.js">
+  <link rel="stylesheet" href="./assets/main.e6b9c159.css">
+</head>
+  <body>
+    <main id="app" v-clock @mounted="onMounted" class="page">
+      <header class="page-hd">
+        <div class="header" :class="{hide:hideHead}">
+          <div class="header-left">
+            <div class="logo">NP</div>
+          </div>
+          <form action="." @submit.prevent="search">
+            <input
+              type="search"
+              v-model="searchValue"
+              class="search-input"
+              placeholder="Search"
+            />
+          </form>
+          <div class="header-right">
+            <div class="icon" :class="theme" @click="changeTheme"></div>
+          </div>
+        </div>
+      </header>
+      <article class="page-bd">
+        <div class="bscroll-wrapper">
+          <div class="bscroll-content">
+            <div class="title">
+              <h1>Hi There</h1>
+              <div class="date">{{now}}</div>
+            </div>
+
+            <ul class="tag">
+              <li v-for="tag in tags" ::key="tag">{{tag}}</li>
+            </ul>
+
+            <ul class="list">
+              <li v-show="loading" class="text-center">Loading...</li>
+              <li class="list-item" v-for="item in list">
+                <div class="image">
+                  <img :src="item.image" alt="image" />
+                </div>
+                <div class="content">
+                  <p>{{item.sentence}}</p>
+                  <div class="footer">
+                    <span>{{formatDate(item.date)}}</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    
+  </body>
+</html>
