@@ -49,7 +49,7 @@ function __init__() {
         scrollX: false,
         click: true,
         eventPassthrough: 'horizontal',
-        probeType: 2
+        probeType: 3
       })
 
       scrollList.on('scroll', (ev) => {
